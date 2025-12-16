@@ -2,28 +2,13 @@
 
 import { DevStage } from '@devstage/ui';
 import { ComponentConfig } from '@devstage/core';
+import { Button } from '../../components/Button';
 
-// Demo component
-const DemoButton = ({ label = 'Click me', variant = 'primary' }: any) => {
-  return (
-    <button
-      className={`px-4 py-2 rounded-lg ${
-        variant === 'primary'
-          ? 'bg-accent-primary text-white'
-          : 'bg-background-secondary text-foreground-primary'
-      }`}
-    >
-      {label}
-    </button>
-  );
-};
-
-// Component configuration
 const buttonConfig: ComponentConfig = {
-  id: 'demo-button',
-  name: 'Demo Button',
-  component: DemoButton,
-  description: 'A simple demo button component',
+  id: 'button',
+  name: 'Button',
+  component: Button,
+  description: 'A versatile button component with multiple variants and sizes',
   props: [
     {
       name: 'label',
@@ -38,32 +23,50 @@ const buttonConfig: ComponentConfig = {
       description: 'Button style variant',
       control: {
         type: 'select',
-        options: ['primary', 'secondary'],
+        options: ['primary', 'secondary', 'outline'],
       },
+    },
+    {
+      name: 'size',
+      type: 'select',
+      defaultValue: 'medium',
+      description: 'Button size',
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large'],
+      },
+    },
+    {
+      name: 'disabled',
+      type: 'boolean',
+      defaultValue: false,
+      description: 'Disable button interaction',
     },
   ],
   defaultProps: {
     label: 'Click me',
     variant: 'primary',
+    size: 'medium',
+    disabled: false,
   },
 };
 
 export default function PlaygroundPage() {
   return (
-    <div className="playground-page p-8">
-      <h1 className="text-3xl font-bold mb-6">Component Playground</h1>
-      <div className="border border-border-default rounded-lg p-6">
-        <DevStage component={buttonConfig}>
-          <div className="space-y-4">
-            <DevStage.Toolbar />
-            <div className="flex gap-4">
-              <DevStage.Controls />
+    <div className="playground-page min-h-screen bg-background-primary p-8">
+      <h1 className="text-3xl font-bold mb-6 text-foreground-primary">Component Playground</h1>
+      <DevStage component={buttonConfig}>
+        <div className="space-y-4">
+          <DevStage.Toolbar />
+          <div className="flex gap-4">
+            <DevStage.Controls />
+            <div className="flex-1 flex gap-4">
               <DevStage.Canvas />
               <DevStage.Code />
             </div>
           </div>
-        </DevStage>
-      </div>
+        </div>
+      </DevStage>
     </div>
   );
 }
