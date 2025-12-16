@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd ../.. && pnpm build --filter=@devstage/web",
-  "installCommand": "pnpm install",
-  "framework": "nextjs"
-}
