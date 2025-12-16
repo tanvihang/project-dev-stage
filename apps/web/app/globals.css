@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Background colors */
+  --background-primary: 0 0% 100%;
+  --background-secondary: 0 0% 98%;
+  --background-tertiary: 0 0% 96%;
+  --background-canvas: 0 0% 97%;
+
+  /* Foreground colors */
+  --foreground-primary: 0 0% 9%;
+  --foreground-secondary: 0 0% 45%;
+  --foreground-tertiary: 0 0% 65%;
+
+  /* Border colors */
+  --border-subtle: 0 0% 90%;
+  --border-default: 0 0% 85%;
+  --border-strong: 0 0% 75%;
+
+  /* Accent colors */
+  --accent-primary: 262 83% 58%;
+  --accent-secondary: 262 83% 68%;
+  --accent-hover: 262 83% 48%;
+
+  /* Syntax highlighting */
+  --syntax-keyword: 262 83% 58%;
+  --syntax-string: 142 76% 36%;
+  --syntax-function: 221 83% 53%;
+  --syntax-comment: 0 0% 55%;
+}
+
+[data-theme='dark'] {
+  /* Background colors */
+  --background-primary: 0 0% 9%;
+  --background-secondary: 0 0% 12%;
+  --background-tertiary: 0 0% 15%;
+  --background-canvas: 0 0% 11%;
+
+  /* Foreground colors */
+  --foreground-primary: 0 0% 95%;
+  --foreground-secondary: 0 0% 70%;
+  --foreground-tertiary: 0 0% 50%;
+
+  /* Border colors */
+  --border-subtle: 0 0% 20%;
+  --border-default: 0 0% 25%;
+  --border-strong: 0 0% 35%;
+
+  /* Accent colors */
+  --accent-primary: 262 83% 58%;
+  --accent-secondary: 262 83% 68%;
+  --accent-hover: 262 83% 68%;
+
+  /* Syntax highlighting */
+  --syntax-keyword: 262 83% 68%;
+  --syntax-string: 142 76% 46%;
+  --syntax-function: 221 83% 63%;
+  --syntax-comment: 0 0% 45%;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] {
+    /* Background colors */
+    --background-primary: 0 0% 9%;
+    --background-secondary: 0 0% 12%;
+    --background-tertiary: 0 0% 15%;
+    --background-canvas: 0 0% 11%;
+
+    /* Foreground colors */
+    --foreground-primary: 0 0% 95%;
+    --foreground-secondary: 0 0% 70%;
+    --foreground-tertiary: 0 0% 50%;
+
+    /* Border colors */
+    --border-subtle: 0 0% 20%;
+    --border-default: 0 0% 25%;
+    --border-strong: 0 0% 35%;
+
+    /* Accent colors */
+    --accent-primary: 262 83% 58%;
+    --accent-secondary: 262 83% 68%;
+    --accent-hover: 262 83% 68%;
+
+    /* Syntax highlighting */
+    --syntax-keyword: 262 83% 68%;
+    --syntax-string: 142 76% 46%;
+    --syntax-function: 221 83% 63%;
+    --syntax-comment: 0 0% 45%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: hsl(var(--foreground-primary));
+  background: hsl(var(--background-primary));
+}
